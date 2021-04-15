@@ -18,24 +18,26 @@ const RepositoriesList: React.FC = () => {
       <div className="form">
         <form onSubmit={onSubmit}>
           <input value={term} onChange={(e) => setTerm(e.target.value)} />
-          <button>Search</button>
+          <button className="button">Search</button>
         </form>
         {error && <h3>{error}</h3>}
         {loading && <h3>Searching...</h3>}
-        {!error &&
-          !loading &&
-          data.map((book) => (
-            <div key={book.title} className="list">
-              <ul>
-                <li>
-                  {book.title}
-                  <ul>
-                    <li>{book.author}</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          ))}
+        <div className="list">
+          {!error &&
+            !loading &&
+            data.map((book) => (
+              <div key={book.title}>
+                <ul className="ul-title">
+                  <li className="title">
+                    {book.title}
+                    <ul>
+                      <li className="author">{book.author}</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
   );
