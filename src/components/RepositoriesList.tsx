@@ -13,16 +13,30 @@ const RepositoriesList: React.FC = () => {
     searchBookRepositories(term);
   };
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <input value={term} onChange={(e) => setTerm(e.target.value)} />
-        <button>Search</button>
-      </form>
-      {error && <h3>{error}</h3>}
-      {loading && <h3>Loading...</h3>}
-      {!error &&
-        !loading &&
-        data.map((title) => <div key={title}>{title}</div>)}
+    <div className="form-container">
+      <h2 className="inputheader">Search for title</h2>
+      <div className="form">
+        <form onSubmit={onSubmit}>
+          <input value={term} onChange={(e) => setTerm(e.target.value)} />
+          <button>Search</button>
+        </form>
+        {error && <h3>{error}</h3>}
+        {loading && <h3>Searching...</h3>}
+        {!error &&
+          !loading &&
+          data.map((book) => (
+            <div key={book.title} className="list">
+              <ul>
+                <li>
+                  {book.title}
+                  <ul>
+                    <li>{book.author}</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

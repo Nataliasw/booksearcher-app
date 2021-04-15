@@ -16,7 +16,7 @@ export const searchBookRepositories = (term: string) => {
       );
 
       const names = data.results.map((result: any) => {
-        return result.title;
+        return { title: result.title, author: result.author };
       });
 
       dispatch({

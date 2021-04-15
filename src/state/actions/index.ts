@@ -6,7 +6,7 @@ interface SearchingListAction {
 
 interface SearchingListSuccessAction {
   type: BookActionType.SEARCHING_LIST_SUCCESS;
-  payload: string[];
+  payload: { title: string; author: string }[];
 }
 
 interface SearchingListFailedAction {

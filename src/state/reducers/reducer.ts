@@ -3,8 +3,7 @@ import { Action } from "../actions";
 
 interface ListState {
   loading: boolean;
-  data: string[];
-
+  data: { title: string; author: string }[];
   error: string | null;
 }
 
