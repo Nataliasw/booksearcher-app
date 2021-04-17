@@ -13,7 +13,7 @@ const RepositoriesList: React.FC = () => {
     searchBookRepositories(term);
   };
   return (
-    <div className="form-container">
+    <div className="form-container" id="search">
       <h2 className="inputheader">Search for title</h2>
       <div className="form">
         <form onSubmit={onSubmit}>

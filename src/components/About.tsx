@@ -1,6 +1,8 @@
+import books from "./pics/Books-Website.png";
+
 const About = () => {
   return (
-    <div className="about">
+    <div className="about" id="top-page">
       <div>
         <h1 className="description1">Don't know what to read next?</h1>
         <h3 className="description2">
@@ -8,7 +10,9 @@ const About = () => {
           Bestsellers.
         </h3>
       </div>
-      <div>{/* image here */}</div>
+      <div>
+        <img src={books} alt="Three books" className="books"></img>
+      </div>
     </div>
   );
 };
