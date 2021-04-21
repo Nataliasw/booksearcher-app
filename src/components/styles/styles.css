@@ -46,10 +46,8 @@ div.nav > p {
 }
 
 .books {
-  position: absolute;
-  top: 3vh;
-  left: 100vh;
   width: 25vh;
+  margin-left: 2rem;
 }
 
 /* Repositories List part */
@@ -144,21 +142,21 @@ button:hover {
   text-align: left;
   position: absolute;
   animation: appear 6s;
-  top: 200px;
-  left: 250px;
+  top: 220px;
+  right: 120px;
 }
 @keyframes appear {
   from {
-    left: -600px;
+    right: -600px;
   }
   to {
-    left: 250px;
+    right: 120px;
   }
 }
 
 .description2 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: right;
   animation: appear2 6s;
   position: absolute;
@@ -199,4 +197,54 @@ a:visited {
 
 a:hover {
   color: black;
+}
+
+@media screen and (max-width: 1043px), screen and (max-device-width: 1043px) {
+  .books {
+    position: absolute;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 926px), screen and (max-device-width: 926px) {
+  .books {
+    position: absolute;
+    top: 30vh;
+    left: 90vh;
+  }
+
+  .description2 {
+    animation: none;
+    top: 350px;
+  }
+}
+
+@media screen and (max-width: 809px), screen and (max-device-width: 809px) {
+  .books {
+    left: 70vh;
+  }
+}
+
+@media screen and (max-width: 650px), screen and (max-device-width: 650px) {
+  .books {
+    left: 45vh;
+  }
+}
+
+@media screen and (max-width: 564px), screen and (max-device-width: 564px) {
+  .description2 {
+    font-size: 1rem;
+    left: 20px;
+  }
+  .description1 {
+    top: 100px;
+    left: 100px;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 540px), screen and (max-device-width: 540px) {
+  .description1 {
+    font-size: 2rem;
+  }
 }
